@@ -1,0 +1,144 @@
+@import "mixins";
+
+.footer_block {
+    padding-top: 130px;
+    background-color: #f5f6f8;
+
+    @include bp(medium) {
+        padding-top: 0;
+    }
+
+    .footer_bg_wrapper {
+        height: 100vh;
+        display: flex;
+        align-items: flex-end;
+        background-image: url("/dist/footerMainBg.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-position: center;
+
+        @include bp(medium) {
+            background-image: url("/dist/footerBgMobile.png");
+            background-size: cover;
+            background-position: inherit;
+        }
+
+        .footer_box {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            border-radius: 2px;
+            background-color: #000000;
+            padding: 40px 50px;
+            margin-bottom: 130px;
+
+            @include bp(medium) {
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 50px;
+            }
+
+            @include bp(xsmall) {
+                padding: 40px 25px;
+            }
+
+            .logo_box {
+                margin-right: 45px;
+                cursor: pointer;
+
+                @include bp(medium) {
+                    margin-right: 0;
+                    margin-bottom: 40px;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .footer_links_box {
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-between;
+                max-width: 440px;
+                width: 100%;
+                margin-left: 0;
+                margin-right: auto;
+
+                @include bp(medium) {
+                    margin-bottom: 40px;
+                    width: 100%;
+                }
+
+                .footer_links_list {
+                    .footer_links_list_item {
+                        margin-bottom: 20px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+
+                        .list_item_link {
+                            color: #ffffff;
+                            font-size: 12px;
+                            font-weight: 300;
+                            line-height: 12px;
+                            text-align: left;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+
+            .footer_social_box {
+                min-width: 180px;
+
+                @include bp(medium) {
+                    width: 100%;
+                }
+
+                .made_box {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    margin-bottom: 80px;
+
+                    @include bp(medium) {
+                        margin-bottom: 40px;
+                    }
+
+                    .made_txt {
+                        opacity: 0.2;
+                        color: #ffffff;
+                        font-size: 11px;
+                        font-weight: 300;
+                        line-height: 11px;
+                        text-align: right;
+                        text-transform: uppercase;
+                        margin-bottom: 15px;
+                    }
+                }
+
+                .social_box {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+
+                    .mail_txt {
+                        opacity: 0.2;
+                        color: #ffffff;
+                        font-size: 12px;
+                        font-weight: 300;
+                        text-align: right;
+                        margin-bottom: 15px;
+                    }
+
+                    .social_list {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

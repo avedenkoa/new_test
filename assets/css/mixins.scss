@@ -1,0 +1,81 @@
+@mixin bp($point, $desktopMobile: mobile, $orientation: portrait) {
+    $bp-xsmall: if($desktopMobile==desktop,
+            '(min-width: 320px)',
+            '(max-width: 320px)'+ if($orientation==landscape, ' and (orientation: landscape)', ''));
+    $bp-small: if($desktopMobile==desktop,
+            '(min-width: 576px)',
+            '(max-width: 576px)'+ if($orientation==landscape, ' and (orientation: landscape)', ''));
+    $bp-ipad: if($desktopMobile==desktop,
+            '(min-width: 750px)',
+            '(max-width: 750px)'+ if($orientation==landscape, ' and (orientation: landscape)', ''));
+    $bp-medium: if($desktopMobile==desktop,
+            '(min-width: 768px)',
+            '(max-width: 768px)'+ if($orientation==landscape, ' and (orientation: landscape)', ''));
+    $bp-large: if($desktopMobile==desktop,
+            '(min-width: 1060px)',
+            '(max-width: 1060px)'+ if($orientation==landscape, ' and (orientation: landscape)', ''));
+    $bp-xmedium: if($desktopMobile==desktop,
+            '(min-width: 1200px)',
+            '(max-width: 1200px)'+ if($orientation==landscape, ' and (orientation: landscape)', ''));
+    $bp-xlarge: if($desktopMobile==desktop,
+            '(min-width: 1366px)',
+            '(max-width: 1366px)'+ if($orientation==landscape, ' and (orientation: landscape)', ''));
+    $bp-big: if($desktopMobile==desktop,
+            '(min-width: 1440px)',
+            '(max-width: 1440px)'+ if($orientation==landscape, ' and (orientation: landscape)', ''));
+    $bp-ipad7: '(device-width : 810px) and (device-height : 1080px) and (-webkit-device-pixel-ratio: 2)';
+
+    @if $point==xsmall {
+        @media #{$bp-xsmall} {
+            @content;
+        }
+    }
+
+    @else if $point==small {
+        @media #{$bp-small} {
+            @content;
+        }
+    }
+
+    @else if $point==medium {
+        @media #{$bp-medium} {
+            @content;
+        }
+    }
+
+    @else if $point==large {
+        @media #{$bp-large} {
+            @content;
+        }
+    }
+
+    @else if $point==xlarge {
+        @media #{$bp-xlarge} {
+            @content;
+        }
+    }
+
+    @else if $point==big {
+        @media #{$bp-big} {
+            @content;
+        }
+    }
+
+    @else if $point==xmedium {
+        @media #{$bp-xmedium} {
+            @content;
+        }
+    }
+
+    @else if $point==ipad {
+        @media #{$bp-ipad} {
+            @content;
+        }
+    }
+
+    @else if $point==ipad7 {
+        @media #{$bp-ipad7} {
+            @content;
+        }
+    }
+}

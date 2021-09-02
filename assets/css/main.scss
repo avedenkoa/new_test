@@ -1,0 +1,90 @@
+// Include styles
+@import "header";
+@import "body";
+@import "footer";
+@import "mixins";
+
+// Include Fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+// Global Styles Normalize
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: unset;
+    line-height: unset;
+    color: unset;
+
+    &.no_scroll {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .width_wrapper {
+        width: 100%;
+        max-width: 1000px;
+        padding: 0 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    p {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    input,
+    select {
+        font-size: 100%;
+    }
+
+    a {
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+.scroll_watch {
+    opacity: 0;
+    transition: opacity 1s;
+
+    &.scroll-watch-in-view {
+        opacity: 1;
+    }
+}
